@@ -1,0 +1,181 @@
+@import url("https://fonts.cdnfonts.com/css/gilroy-bold");
+$white: #f5fcff;
+$black: #221f1f;
+$beige: #e1dad3;
+$light-purple: #e1cffb;
+$purple: #ae95da;
+$dark-purple: #7e65aa;
+$blue: #cfeefc;
+$yellow: #f9f8cd;
+$green: #cffcd1;
+
+$fz-header-16: 16px;
+$fz-20-14: clamp(0.875em, 0.7386em + 0.6818vw, 1.25em);
+$fz-56-36: clamp(2.25rem, 1.7955rem + 2.2727vw, 3.5rem);
+$fz-24-20: clamp(1.25em, 1.1591em + 0.4545vw, 1.5em);
+$fz-24-14: clamp(0.875em, 0.6477em + 1.1364vw, 1.5em);
+$fz-20-16: clamp(1rem, 0.9091rem + 0.4545vw, 1.25rem);
+$fz-16-14: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
+$fz-36-24: clamp(1.5rem, 1.3182rem + 0.9091vw, 2rem);
+body {
+  background-color: $white;
+  font-family: "Gilroy-Light", sans-serif;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-size: $fz-20-16;
+}
+
+.container {
+  max-width: 1230px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.h1-title {
+  line-height: 1.2;
+  color: $white;
+  font-size: clamp(3.75em, 2.6591em + 5.4545vw, 6.75em);
+}
+.h2-title {
+  font-family: "Gilroy-Medium", sans-serif;
+  font-size: $fz-56-36;
+  color: $black;
+}
+.h3-title {
+  font-family: "Gilroy-Medium", sans-serif;
+  font-size: $fz-24-20;
+  color: $black;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  max-width: 100%;
+  width: 100%;
+  //   left: 0;
+  z-index: 1;
+  padding: 16px 0;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    max-width: 253px;
+    width: 100%;
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  &__link {
+    color: $white;
+    font-size: $fz-header-16;
+  }
+  &__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    z-index: 10;
+  }
+  &__toggle-bar {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    transition: 0.3s;
+  }
+  &__toggle.active .header__toggle-bar:nth-child(1) {
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    transform-origin: center;
+  }
+  &__toggle.active .header__toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+  &__toggle.active .header__toggle-bar:nth-child(3) {
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 50%;
+    transform-origin: center;
+  }
+  &__list {
+    display: none;
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 46px;
+  }
+  &__btn {
+    font-size: $fz-header-16;
+    color: $white;
+    text-transform: uppercase;
+
+    svg {
+      width: 14px;
+    }
+  }
+  &__get {
+    border-radius: 40px;
+    background-color: $purple;
+    transition: 0.2s ease;
+
+    &:hover {
+      transition: 0.2s ease;
+      background-color: $dark-purple;
+    }
+  }
+  &__link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 8px 12px 8px 24px;
+    font-size: $fz-header-16;
+    color: $white;
+    svg {
+      border-radius: 50%;
+      padding: 14px;
+      background-color: $white;
+      width: 40px;
+    }
+  }
+  //   &__lang {
+  //     position: relative;
+  //     display: inline-block;
+  //   }
+  //   &__btn {
+  //     display: inline-block;
+  //   }
+  //   &__lang-link {
+  //     display: none;
+  //     position: absolute;
+  //     background-color: #f5f5f5;
+  //     min-width: 283px;
+  //     padding: 18px 0;
+  //     border-radius: 16px;
+  //     border: 1px solid #e7e7e7;
+  //     z-index: 5;
+  //   }
+  //   &__lang:hover .dheader__list {
+  //     display: block;
+  //   }
+}
+.slider__box {
+  display: flex;
+}
+.slider-next,
+.slider-prev {
+  border-radius: 50%;
+  border: 2px solid $purple;
+  width: 60px;
+  height: 60px;
+  padding: 16px 19px;
+}
